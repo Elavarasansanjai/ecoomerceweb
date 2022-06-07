@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>online store</title>
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Lato", sans-serif;
+      }
+      /* nav start*/
+      nav {
+        background-color: rgb(219, 213, 213);
+
+        box-shadow: -2px 12px 15px 0px rgba(184, 158, 184, 1);
+        position: fixed;
+        width: 100%;
+        z-index: 3;
+        height: 15vh;
+      }
+      .navcontainer {
+        padding: 20px 50px;
+        position: relative;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .links {
+        display: flex;
+        align-items: center;
+        width: 40%;
+        justify-content: space-between;
+        list-style-type: none;
+        position: relative;
+      }
+      .navimg {
+        position: relative;
+      }
+      .link {
+        text-decoration: none;
+        color: black;
+        font-weight: 400;
+      }
+      .link:hover {
+        color: orangered;
+        transition: 0.4s;
+        font-size: 20px;
+      }
+      .one {
+        position: absolute;
+        top: 30%;
+        right: 40%;
+      }
+      .home {
+        height: 90vh;
+        flex-direction: column;
+        background: url(./home-backround-imag.jpg);
+        background-position: bottom -50% right 0;
+        background-size: cover;
+        align-items: flex-start;
+        justify-content: center;
+        display: flex;
+        color: aliceblue;
+        padding: 0 80px;
+      }
+      .homecontent h3 {
+        margin-bottom: 15px;
+        color: rgb(133, 122, 122);
+        font-weight: 900;
+      }
+      .homecontent h1 {
+        font-weight: 900;
+        color: rgb(59, 56, 56);
+        color: white;
+        font-size: 40px;
+      }
+      .homecontent p {
+        margin-top: 10px;
+        margin-bottom: 15px;
+        color: rgb(143, 140, 140);
+        font-size: 13px;
+      }
+      .homeShopebtn {
+        color: rgb(31, 29, 29);
+        background-color: rgb(202, 202, 202);
+        border: none;
+        outline: none;
+        padding: 5px;
+        border-radius: 5px;
+        margin-top: 10px;
+        border: none;
+        outline: none;
+      }
+      .homeShopebtn:hover {
+        color: black;
+        background-color: aliceblue;
+        border: 2px solid black;
+      }
+
+      /*home end*/
+      /* feature start*/
+      .feature {
+        margin: 20px;
+        margin-top: 40px;
+        padding: 20px;
+      }
+      .featureHead {
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+      .featureHead h1 {
+        font-weight: 900;
+        margin-bottom: 20px;
+      }
+      .featureHead p {
+        font-size: 16px;
+        color: rgb(87, 78, 78);
+        margin-top: 30px;
+      }
+      .line {
+        background-color: orangered;
+        height: 2px;
+        width: 50px;
+        border-radius: 1px;
+        margin: 0 auto;
+      }
+      /*product start*/
+      .productcontainer {
+        margin-top: 50px;
+        margin-left: 30px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        display: flex;
+        overflow: hidden;
+      }
+      .product {
+        width: 240px;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        justify-content: center;
+        border: 1px solid black;
+        position: relative;
+        overflow: hidden;
+        margin-top: 20px;
+        cursor: pointer;
+        margin-right: 20px;
+      }
+
+      .productStar {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-bottom: 7px;
+      }
+      .productStar h3 {
+        color: rgb(218, 218, 45);
+        margin-right: 2px;
+      }
+      .productTitle {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: rgb(44, 43, 43);
+      }
+      .productPrice {
+        margin-top: 3px;
+        margin-bottom: 10px;
+        color: black;
+        font-weight: 700;
+      }
+      .addtocard {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transition: 0.3s;
+        background-color: orangered;
+        color: white;
+        border: none;
+        outline: none;
+        padding: 10px;
+        border-radius: 10px;
+        transform: translate(100%);
+        opacity: 1;
+      }
+      .product:hover {
+        box-shadow: inset 2px 2px 7px gray,
+          inset -3px -3px 7px rgb(192, 181, 181);
+      }
+
+      .opacity {
+        background-color: rgb(250, 249, 249);
+      }
+
+      .addtocardhover {
+        opacity: 20;
+        transform: translate(0%);
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transition: 0.3s;
+        background-color: orangered;
+        color: white;
+        border: none;
+        outline: none;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      /* feature end*/
+      /*histry start*/
+      .histry {
+        position: absolute;
+        top: 90px;
+        right: 0;
+        margin-top: 20px;
+        transform: translateX(120%);
+        background-color: rgb(234, 240, 245);
+        position: fixed;
+        margin-right: 20px;
+        transition: 0.4s;
+        border-radius: 10px;
+        box-shadow: 0px 0px 8px rgb(221, 216, 216);
+      }
+      .his {
+        display: flex;
+
+        align-items: center;
+        padding: 30px;
+        width: 80%;
+        height: 500px;
+      }
+      .his1 {
+        width: 340px;
+      }
+      .his2 {
+        margin-left: 50px;
+        width: 300px;
+      }
+      .imgcatagry {
+        justify-content: space-between;
+        display: flex;
+      }
+      .his2price {
+        margin-bottom: 15px;
+        font-weight: 500;
+        color: rgb(39, 37, 37);
+      }
+      .size {
+        margin-bottom: 20px;
+        padding: 5px 10px;
+        outline: none;
+        border: 1px solid black;
+      }
+      .quntitynumber {
+        height: 40px;
+        width: 50px;
+        outline: none;
+        padding: 3px;
+        font-size: 14px;
+      }
+      .sixe {
+        display: flex;
+        align-items: center;
+      }
+      .addtocad {
+        padding: 10px 10px;
+        width: 100px;
+        cursor: pointer;
+        border: none;
+        background-color: orangered;
+        color: white;
+        border-radius: 5px;
+        outline: none;
+        margin-left: 20px;
+      }
+      .addtocad:hover {
+        color: black;
+        background-color: aliceblue;
+        border: 1px solid black;
+      }
+      .hisproduct {
+        margin-top: 15px;
+        margin-bottom: 20px;
+        color: rgb(54, 54, 54);
+      }
+      .para {
+        width: 300px;
+      }
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 30px;
+        background-color: black;
+        color: white;
+        padding: 0 4px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      .histrycome {
+        transform: translate(0%);
+        transition: 0.3s;
+      }
+      /* histry end*/
+      .l {
+        width: 400px;
+      }
+      .adf {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+      }
+      .adf button {
+        margin-top: 20px;
+      }
+      .inn h1 {
+        font-size: 25px;
+        font-weight: 500;
+      }
+      .inn h2 {
+        font-weight: 400;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+      .inn input {
+        height: 40px;
+        width: 40px;
+        border-radius: 5px;
+        padding-left: 5px;
+      }
+      .ad button {
+        padding: 10px;
+        border-radius: 5px;
+        color: black;
+        border: 1px solid black;
+        outline: none;
+      }
+      .ad button:hover {
+        color: white;
+        background-color: rgb(245, 55, 55);
+      }
+      .linee {
+        margin-top: 25px;
+        height: 1px;
+        width: 100%;
+        margin-left: 20px;
+        margin-right: 20px;
+        background-color: black;
+      }
+      .total {
+        float: right;
+        margin-top: 10px;
+      }
+      .buy {
+        margin-top: 40px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: orangered;
+        margin-left: 30px;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .l {
+        position: fixed;
+        top: 15vh;
+        right: 0;
+        background-color: aliceblue;
+        transform: translate(100%);
+        transition: 1s;
+        height: 85vh;
+        padding: 20px;
+      }
+      .transform {
+        transform: translate(0%);
+      }
+      .itemincrement {
+        position: relative;
+        margin-top: 20px;
+      }
+      .plus {
+        transform: rotate(90deg);
+        position: absolute;
+        top: -20px;
+        font-weight: 700;
+        font-size: 55px;
+        color: red;
+        cursor: pointer;
+      }
+      .minus {
+        transform: rotate(90deg);
+        position: absolute;
+        margin-top: 5px;
+        top: 5px;
+        font-size: 55px;
+        color: red;
+        cursor: pointer;
+      }
+
+      /* screen divice*/
+      @media only screen and (max-width: 450px) {
+        nav {
+          background-color: rgb(219, 213, 213);
+
+          box-shadow: -2px 5px 5px 0px rgba(184, 158, 184, 1);
+          position: fixed;
+          width: 100%;
+          z-index: 3;
+          height: 10vh;
+          align-items: center;
+          text-align: center;
+        }
+        .links {
+          display: flex;
+          align-items: center;
+          width: 0%;
+          justify-content: space-between;
+          list-style-type: none;
+          position: relative;
+        }
+        .link {
+          display: none;
+        }
+        .navcontainer {
+          padding: 20px 40px;
+          justify-content: space-between;
+        }
+        .nav {
+          justify-content: space-between;
+          display: flex;
+          align-items: center;
+          padding-right: 20px;
+          text-align: center;
+          height: 100%;
+        }
+        .one {
+          position: absolute;
+          top: 37%;
+          right: 40%;
+        }
+        .home {
+          height: 90vh;
+          flex-direction: column;
+          background: url(./home-backround-imag.jpg);
+          background-position: bottom -50% right 0;
+          background-size: cover;
+          align-items: flex-start;
+          justify-content: center;
+          display: flex;
+          color: aliceblue;
+          padding: 0 40px;
+        }
+        .homeShopebtn {
+          color: orangered;
+          background-color: rgb(255, 255, 255);
+          border: none;
+          outline: none;
+          padding: 9px;
+          border-radius: 5px;
+          margin-top: 10px;
+          border: none;
+          outline: none;
+        }
+        .homeShopebtn:hover {
+          color: white;
+          background-color: orangered;
+          outline: none;
+          border: none;
+        }
+        .productcontainer {
+          margin-top: 50px;
+          margin-left: 20px;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          display: flex;
+          overflow: hidden;
+        }
+        .product {
+          width: 240px;
+          padding: 10px;
+          border-radius: 5px;
+          text-align: center;
+          justify-content: center;
+          border: 1px solid black;
+          position: relative;
+          overflow: hidden;
+          margin-top: 20px;
+          cursor: pointer;
+          margin-right: 1px;
+        }
+        .his {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          justify-content: center;
+          width: 340px;
+          padding-bottom: 20px;
+        }
+        .para {
+          margin-top: 4px;
+        }
+        .bigimg {
+          height: 200px;
+          width: 200px;
+        }
+        .his1 {
+          width: 250px;
+          padding-left: 30px;
+          text-align: center;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+        }
+        .histry {
+          height: 450px;
+          top: 80px;
+        }
+        .sixe {
+          display: none;
+        }
+        .addtocad {
+          display: none;
+        }
+
+        .his {
+          display: flex;
+          margin-top: 20px;
+          padding: 20px;
+          width: 100%;
+          height: 400px;
+        }
+        .smallimg {
+          height: 50px;
+          width: 50px;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+        .his2 {
+          margin-left: 20px;
+          width: 250px;
+        }
+        .close {
+          right: 10px;
+        }
+        .para {
+          display: flex;
+          width: 250px;
+        }
+        .size {
+          display: none;
+        }
+        .his2price {
+          margin-top: 20px;
+          margin-bottom: 4px;
+        }
+        .hisproduct {
+          margin-top: 0px;
+          margin-bottom: 5px;
+          color: rgb(54, 54, 54);
+        }
+        .avoid {
+          display: none;
+        }
+        .l {
+          width: 100%;
+          top: 10vh;
+          height: 90vh;
+        }
+        .cards {
+          height: 60vh;
+          overflow: scroll;
+        }
+        .plus {
+          transform: rotate(90deg);
+          position: absolute;
+          top: -20px;
+          font-weight: 700;
+          font-size: 55px;
+          color: red;
+          cursor: pointer;
+        }
+      }
+      .detail {
+        padding: 5px;
+        color: white;
+        background-color: orangered;
+        border: none;
+        border-radius: 3px;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="navcontainer">
+        <div class="nav">
+          <h1 class="navTitle">.Cara</h1>
+          <ul class="links">
+            <li><a href="#" class="link">Home</a></li>
+            <li><a href="#" class="link">Shop</a></li>
+            <li><a href="#" class="link">Blog</a></li>
+            <li><a href="#" class="link">About</a></li>
+            <li><a href="#" class="link">Contact</a></li>
+            <li class="navimg">
+              <img
+                class="navshopingIcon"
+                src="./shoping-img-removebg-preview.png"
+                height="40"
+                width="50"
+              />
+              <p class="one"></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header class="home">
+      <div class="homecontent">
+        <h3>Trade-in-offer</h3>
+        <h1>Super Value Deals</h1>
+        <h1>On All Products</h1>
+        <p>Save more with coupons up to 70% off!</p>
+        <button class="homeShopebtn">Shop Now</button>
+      </div>
+    </header>
+    <div class="feature">
+      <div class="featureHead">
+        <h1 class="featureTitle">Our Featured</h1>
+        <div class="line"></div>
+        <p class="headcontent">
+          Here You can check out our new products with fair price on cara
+        </p>
+      </div>
+      <div class="productcontainer">
+        <div class="product">
+          <div>
+            <img
+              src="./img-1.jpg"
+              alt=""
+              height="200"
+              width="200"
+              class="productImg"
+            />
+          </div>
+          <div class="productStar">
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+          </div>
+          <div><h2 class="productTitle">T-shirt</h2></div>
+          <div>
+            <p class="productPrice"><span>$</span>92.00</p>
+          </div>
+          <button class="detail">product details</button>
+          <h2 class="addtocard">Add To Card</h2>
+        </div>
+
+        <div class="product">
+          <div>
+            <img
+              src="./img-2.jpg"
+              alt=""
+              height="200"
+              width="200"
+              class="productImg"
+            />
+          </div>
+          <div class="productStar">
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+          </div>
+          <div><h2 class="productTitle">T-shirt</h2></div>
+          <div>
+            <p class="productPrice"><span>$</span>92.00</p>
+          </div>
+          <button class="detail">product details</button>
+          <h2 class="addtocard">Add To Card</h2>
+        </div>
+        <div class="product">
+          <div>
+            <img
+              src="./img-3.jpg"
+              alt=""
+              height="200"
+              width="200"
+              class="productImg"
+            />
+          </div>
+          <div class="productStar">
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+          </div>
+          <div><h2 class="productTitle">T-shirt</h2></div>
+          <div>
+            <p class="productPrice"><span>$</span>92.00</p>
+          </div>
+          <button class="detail">product details</button>
+          <h2 class="addtocard">Add To Card</h2>
+        </div>
+        <div class="product">
+          <div>
+            <img
+              src="./img-4.jpg"
+              alt=""
+              height="200"
+              width="200"
+              class="productImg"
+            />
+          </div>
+          <div class="productStar">
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+          </div>
+          <div><h2 class="productTitle">T-shirt</h2></div>
+          <div>
+            <p class="productPrice"><span>$</span>92.00</p>
+          </div>
+          <button class="detail">product details</button>
+          <h2 class="addtocard">Add To Card</h2>
+        </div>
+        <div class="product">
+          <div>
+            <img
+              src="./img-5.jpg"
+              alt=""
+              height="200"
+              width="200"
+              class="productImg"
+            />
+          </div>
+          <div class="productStar">
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+          </div>
+          <div><h2 class="productTitle">T-shirt</h2></div>
+          <div>
+            <p class="productPrice"><span>$</span>92.00</p>
+          </div>
+          <button class="detail">product details</button>
+          <h2 class="addtocard">Add To Card</h2>
+        </div>
+        <div class="product">
+          <div>
+            <img
+              src="./img-6.jpg"
+              alt=""
+              height="200"
+              width="200"
+              class="productImg"
+            />
+          </div>
+          <div class="productStar">
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+          </div>
+          <div><h2 class="productTitle">T-shirt</h2></div>
+          <div>
+            <p class="productPrice"><span>$</span>92.00</p>
+          </div>
+          <button class="detail">product details</button>
+          <h2 class="addtocard">Add To Card</h2>
+        </div>
+        <div class="product">
+          <div>
+            <img
+              src="./img-7.jpg"
+              alt=""
+              height="200"
+              width="200"
+              class="productImg"
+            />
+          </div>
+          <div class="productStar">
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+          </div>
+          <div><h2 class="productTitle">T-shirt</h2></div>
+          <div>
+            <p class="productPrice"><span>$</span>92.00</p>
+          </div>
+          <button class="detail">product details</button>
+          <h2 class="addtocard">Add To Card</h2>
+        </div>
+        <div class="product">
+          <div>
+            <img
+              src="./img-8.jpg"
+              alt=""
+              height="200"
+              width="200"
+              class="productImg"
+            />
+          </div>
+          <div class="productStar">
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+            <h3>&starf;</h3>
+          </div>
+          <div><h2 class="productTitle">T-shirt</h2></div>
+          <div>
+            <p class="productPrice"><span>$</span>92.00</p>
+          </div>
+          <button class="detail">product details</button>
+          <h2 class="addtocard">Add To Card</h2>
+        </div>
+      </div>
+      <div class="histry">
+        <div class="his">
+          <div class="his1">
+            <img
+              src="./img-1.jpg"
+              class="bigimg"
+              alt=""
+              height="350"
+              width="350"
+            />
+            <div class="imgcatagry">
+              <img
+                src="./img-1.jpg"
+                class="smallimg"
+                height="100"
+                width="100"
+                alt=""
+              />
+              <img
+                src="./img-1.1.jpg"
+                class="smallimg"
+                height="100"
+                width="100"
+                alt=""
+              />
+              <img
+                src="./img-1.2.jpg"
+                class="smallimg"
+                height="100"
+                width="100"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="his2">
+            <h2 class="his2price">$92</h2>
+            <select class="size" name="" id="">
+              <option name="size" value="" placeholder="select your size">
+                select your size
+              </option>
+              <option name="size" value="XXL">XXL</option>
+              <option name="size" value="XXL">XL</option>
+              <option name="size" value="L">L</option>
+            </select>
+            <div class="sixe">
+              <input class="quntitynumber" type="number" />
+              <button class="addtocad">add to card</button>
+            </div>
+            <h3 class="hisproduct">product details</h3>
+            <p class="para">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum
+              autem facilis aperiam, error dolorem expedita. Deleniti quaerat
+              <span class="avoid"
+                >olorem numquam dolores. Rerum ab sequi quasi praesentium
+                recusandae minima asperiores exercitationem sit ipsa quis optio
+                ipsam dicta voluptatum, amet sed nesciunt.</span
+              >
+            </p>
+          </div>
+        </div>
+        <h1 class="close">x</h1>
+      </div>
+    </div>
+    <div class="l">
+      <h1 class="cll">x</h1>
+      <div class="cards"></div>
+      <div class="linee"></div>
+      <h3 class="total">Total $ <span class="totalprice">0</span></h3>
+      <h4 class="buy">buy now</h4>
+    </div>
+    <script>
+      "use script";
+      const tshirt = [
+        {
+          price: 92,
+          pname: "T-shirt",
+          images: [
+            { img: "img-1.jpg" },
+            { img: "img-1.jpg" },
+            { img: "img-1.2.jpg" },
+          ],
+          id: 0,
+          numberofunites: 1,
+        },
+        {
+          price: 92,
+          pname: "T-shirt",
+          images: [
+            { img: "img-2.jpg" },
+            { img: "img-2.1.jpg" },
+            { img: "img-2.2.jpg" },
+          ],
+          id: 1,
+          numberofunites: 1,
+        },
+        {
+          price: 92,
+          pname: "T-shirt",
+          images: [
+            { img: "img-3.jpg" },
+            { img: "img-3.1.jpg" },
+            { img: "img-3.2.jpg" },
+          ],
+          id: 2,
+          numberofunites: 1,
+        },
+        {
+          price: 92,
+          pname: "T-shirt",
+          images: [
+            { img: "img-4.jpg" },
+            { img: "img-4.1.jpg" },
+            { img: "img-4.2.jpg" },
+          ],
+          id: 3,
+          numberofunites: 1,
+        },
+        {
+          price: 92,
+          pname: "T-shirt",
+          images: [
+            { img: "img-5.jpg" },
+            { img: "img-5.1.jpg" },
+            { img: "img-5.2.jpg" },
+          ],
+          id: 4,
+          numberofunites: 1,
+        },
+        {
+          price: 92,
+          pname: "T-shirt",
+          images: [
+            { img: "img-6.jpg" },
+            { img: "img-6.1.jpg" },
+            { img: "img-6.2.jpg" },
+          ],
+          id: 5,
+          numberofunites: 1,
+        },
+        {
+          price: 92,
+          pname: "T-shirt",
+          images: [
+            { img: "img-7.jpg" },
+            { img: "img-7.1.jpg" },
+            { img: "img-7.2.jpg" },
+          ],
+          id: 6,
+          numberofunites: 1,
+        },
+        {
+          price: 92,
+          pname: "T-shirt",
+          images: [
+            { img: "img-8.jpg" },
+            { img: "img-8.1.jpg" },
+            { img: "img-8.2.jpg" },
+          ],
+          id: 7,
+          numberofunites: 1,
+        },
+      ];
+      const purcese = [];
+      const product = document.querySelectorAll(".product");
+      const addToCard = document.querySelectorAll(".addtocard");
+      const productcontainer = document.querySelector(".productcontainer");
+      click = 0;
+      product.forEach((mov, i) => {
+        mov.addEventListener("mouseover", () => {
+          addToCard[i].classList.add("addtocardhover");
+          mov.classList.add("opacity");
+        });
+      });
+      product.forEach((mov, i) => {
+        mov.addEventListener("mouseout", () => {
+          addToCard[i].classList.remove("addtocardhover");
+          mov.classList.remove("opacity");
+        });
+      });
+      ///////
+      const smallimg = document.querySelectorAll(".smallimg");
+      let choseItem = 0;
+      const histry = document.querySelector(".histry");
+      document.querySelectorAll(".detail").forEach((mov, i) => {
+        choseItem = i;
+        mov.addEventListener("click", () => {
+          histry.classList.add("histrycome");
+          document.querySelector(".bigimg").src = `${tshirt[i].images[0].img}`;
+          smallimg[0].src = `${tshirt[i].images[0].img}`;
+          smallimg[1].src = `${tshirt[i].images[1].img}`;
+          smallimg[2].src = `${tshirt[i].images[2].img}`;
+        });
+      });
+      document.querySelector(".close").addEventListener("click", () => {
+        histry.classList.remove("histrycome");
+      });
+      /////
+
+      document.querySelectorAll(".smallimg").forEach((element) => {
+        element.addEventListener("click", () => {
+          const src = element.getAttribute("src");
+          document.querySelector(".bigimg").src = `${src}`;
+        });
+      });
+      ///////////////////////////////
+      //add to card
+      /*const total = (numbers) => numbers.reduce((acc, mov) => mov + acc, 0);
+
+                const bag = document.querySelector(".one");
+
+                let bagnumber = 0;
+                let productlist = [];
+                const cards = document.querySelector(".cards");
+                const addtocard = document.querySelectorAll(".addtocard");
+                let totallpricelist = [];
+                const totalprice = document.querySelector(".totalprice");
+                const deleteBtn = document.querySelectorAll(".del");
+                let removeargument;
+                /////
+                addtocard.forEach((mov, i) => {
+                  mov.addEventListener("click", () => {
+                    let check = productlist.some((mov) => mov === i);
+                    if (check) {
+                      addtocard[i].textContent = "Already Aded";
+                    } else {
+                      productlist.push(i);
+                      //bagnumber
+                      bagnumber++;
+                      bag.textContent = bagnumber;
+                      //card
+                      const productimg = `${tshirt[i].images[0].img}`;
+                      const productprice = `${tshirt[i].price}`;
+                      const productname = `${tshirt[i].pname}`;
+                      const text = `
+                                <div class="ad">
+                                  <img src="${productimg}" class="immm" height="100" width="90" alt="" />
+                                  <div class="inn">
+                                    <h1 class="tit">${productname}</h1>
+                                    <h2 class="rs">$${productprice}</h2>
+                                    <input class="nub" type="number" />
+                                  </div>
+                                  <button class="del"><span class="numm"> ${tshirt[i].id}</span> Delete</button>
+                                  </div>`;
+                      cards.insertAdjacentHTML("beforebegin", text);
+                      totallpricelist.push(Number(productprice));
+                      document.querySelectorAll(".addtocard")[i].textContent = "Already Aded";
+                      console.log(total(totallpricelist));
+                      totalprice.textContent = total(totallpricelist);
+                      removeargument = tshirt[i].id;
+
+                      ///////////////remove colection
+                      document.querySelectorAll(".del").forEach((mov, ind) => {
+                        mov.addEventListener("click", (e) => {
+                          
+                          productlist.filter((mov) => mov !== tshirt[ind].id);
+                          console.log(productlist);
+                        });
+                      });
+                    }
+                  });
+                });
+                */
+      //document.querySelector(".navimg").addEventListener("click", () => {
+      //document.querySelector(".l").style.transform = "translate(0%)";
+      //});
+      //start
+
+      /*
+                document.querySelectorAll(".del").forEach((mov, i) => {
+                  mov.addEventListener("click", (e) => {
+                    console.log(e);
+                    document
+                      .querySelector(".cards")
+                      .removeChild(document.querySelectorAll(".ad")[i]);
+                    ubdatetotal()
+                  });
+                });
+                // abdate total
+                const ubdatetotal = () => {
+                  var total = 0;
+                  document.querySelectorAll(".ad").forEach((mov, i) => {
+                    let curent = document.querySelectorAll(".ad")[i];
+                    let pricee = curent.getElementsByClassName(".rs");
+                    let quentity = curent.getElementsByClassName(".nub").value;
+                    total = total + (pricee + Number(quentity));
+                    curent.querySelector(".totalprice").textContent = total;
+                  });
+                };
+                */
+      let quentity = 1;
+      let cardlist = [];
+      let bagnumber = 0;
+      let pricelist = [];
+      document.querySelectorAll(".product").forEach((mov, i) => {
+        mov.addEventListener("click", () => {
+          let checkk = cardlist.some((mov) => mov === i);
+          if (checkk) {
+            document.querySelectorAll(".addtocard")[i].textContent =
+              "add to card";
+          } else {
+            cardlist.push(i);
+            bagnumber++;
+            document.querySelector(".one").textContent = bagnumber;
+            let mesage = document.createElement("div");
+            let button = document.createElement("button");
+            cart.push(tshirt[i]);
+            d = cardlist.findIndex((mov) => mov === i);
+
+            mesage.classList.add(".adf");
+            mesage.innerHTML = `
+                      
+                      <img src="${tshirt[i].images[0].img}" class="immm"        height="100" width="90" alt="" />
+                      <div class="inn">
+                        <h1 class="tit">${tshirt[i].pname}</h1>
+                        <h2 class="rs">$${tshirt[i].price}</h2>
+                        <div class="itemincrement">
+                          <h1 class="plus" onclick="changeNumberOfunits('plus',${tshirt[i].id})"><</h1>
+                          <p class="nummb">${cart[d].numberofunites}</p>
+                          <h1 class="minus" onclick="changeNumberOfunits('minus',${tshirt[i].id})">></h1>
+                        </div>
+                      </div>
+                      <button style="padding: 10px; background-color: red;color: white;"  data-set="${tshirt[i].id}" onclick="delet(${tshirt[i].id})" class="del"><span class="numm"></span> Delete</button>
+                      `;
+
+            //<button  data-set="${tshirt[i].id}" onclick="delet(${tshirt[i].id})" class="del"><span class="numm"></span> Delete</button>
+            document.querySelector(".cards").append(mesage);
+            document.querySelectorAll(".addtocard")[i].textContent =
+              "already aded";
+            mesage.style.display = "flex";
+            mesage.style.alignItems = "center";
+            mesage.style.width = "300px";
+            mesage.style.justifyContent = "space-between";
+            mesage.style.pading = "10px";
+            mesage.style.marginTop = "20px";
+            //total
+            pricelist.push(+tshirt[i].price);
+
+            ///total
+            tott = 0;
+            let dd = cardlist.findIndex((mov) => mov === i);
+            cart[dd].numberofunites = 1;
+            tott = cart.reduce(
+              (acc, mov) => acc + mov.price * mov.numberofunites,
+              0
+            );
+            document.querySelector(".totalprice").textContent = tott;
+            console.log(cart[dd]);
+          }
+        });
+      });
+      ///////remove
+      let tott = 0;
+      const finaltotal = document.querySelector(".totalprice");
+
+      const delet = (num) => {
+        let d = cardlist.findIndex((mov) => mov === num);
+
+        cardlist = cardlist.filter((mov) => mov !== num);
+
+        document.querySelectorAll(".addtocard")[num].textContent =
+          "Add To Card";
+
+        document
+          .querySelector(".cards")
+          .removeChild(document.querySelector(".cards").children[d]);
+
+        tott = tott - cart[d].price * cart[d].numberofunites;
+        document.querySelector(".totalprice").textContent = tott;
+        bagnumber = bagnumber - cart[d].numberofunites;
+        document.querySelector(".one").textContent = bagnumber;
+        cart[d].numberofunites = 1;
+        //bagnumber
+
+        cart = cart.filter((mov) => mov !== cart[d]);
+      };
+      /////////////////////////////plus quentity
+      /*let ubtatetotalfinal = 0;
+                function pluss(num) {
+                  let d = cardlist.findIndex((mov) => mov === num);
+
+                  quentity++;
+                  console.log(quentity);
+                  document.querySelectorAll(".itemincrement")[d].children[1].textContent =
+                    quentity;
+                  let price = document
+                    .querySelectorAll(".inn")
+                    [d].children[1].textContent.replace("$", "");
+                  console.log(document.querySelectorAll(".inn")[d].children[1].textContent);
+                  // console.log(price);
+                  //console.log(typeof total(pricelist));
+                  //console.log(quentity);
+                  //console.log(quentity * price);
+                  let ubdatetotal = total(pricelist) + quentity * Number(price);
+                  finaltotal.textContent = ubdatetotal;
+                  ubtatetotalfinal = ubdatetotal;
+                }
+                ////////minus quentity
+                function mi(num) {
+                  let d = cardlist.findIndex((mov) => mov === num);
+                  quentity--;
+                  quentity = quentity < 1 ? 1 : quentity;
+                  console.log(quentity);
+                  document.querySelectorAll(".itemincrement")[d].children[1].textContent =
+                    quentity;
+                  let price = document
+                    .querySelectorAll(".inn")
+                    [d].children[1].textContent.replace("$", "");
+                  let ubdatetotal = Number(total(pricelist) + quentity * Number(price));
+                  console.log(ubdatetotal);
+                  finaltotal.textContent = ubdatetotal;
+                  ubtatetotalfinal = ubdatetotal;
+                }
+                const total = (l) => {
+                  let tottalprice = l.reduce((acc, mov) => acc + mov, 0);
+                  return tottalprice;
+                };*/
+      let cart = [];
+      function changeNumberOfunits(action, id) {
+        cart = cart.map((item) => {
+          let numberofunite = item.numberofunites;
+          if (item.id === id) {
+            if (action === "minus") {
+              if (numberofunite === 1) {
+                numberofunite = 1;
+              } else {
+                numberofunite--;
+                bagnumber--;
+              }
+            } else if (action === "plus") {
+              numberofunite++;
+              bagnumber++;
+            }
+          }
+
+          return {
+            ...item,
+            numberofunites: numberofunite,
+          };
+        });
+        let d = cardlist.findIndex((mov) => mov === id);
+
+        document.querySelectorAll(".nummb")[d].textContent =
+          cart[d].numberofunites;
+
+        ///total
+        tott = cart.reduce(
+          (acc, mov) => acc + mov.price * mov.numberofunites,
+          0
+        );
+        document.querySelector(".totalprice").textContent = tott;
+        console.log(cart[d]);
+        document.querySelector(".one").textContent = bagnumber;
+      }
+      //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+      const cll = document.querySelector(".cll");
+      cll.addEventListener("click", () => {
+        document.querySelector(".l").classList.remove("transform");
+      });
+      const bagg = document.querySelector(".navimg");
+      bagg.addEventListener("click", () => {
+        document.querySelector(".l").classList.add("transform");
+      });
+      document.querySelector(".buy").addEventListener("click", () => {
+        if (cardlist.length === 0) {
+          alert("please select your products");
+        } else {
+          alert("your products will be deliver at 3 days");
+        }
+      });
+      document.querySelector(".homeShopebtn").addEventListener("click", () => {
+        document
+          .querySelector(".featureTitle")
+          .scrollIntoView({ behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
